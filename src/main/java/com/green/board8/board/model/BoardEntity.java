@@ -1,15 +1,17 @@
-package com.green.board8.model;
+package com.green.board8.board.model;
 
-import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
-@AllArgsConstructor
-public class BoardDetailVo {
+@Data
+public class BoardEntity {
     private int iboard;
     private String title;
     private String ctnt;
     private String writer;
     private String createdAt;
     private String updatedAt;
+
+
 }

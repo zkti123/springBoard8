@@ -1,5 +1,9 @@
-package com.green.board8.model;
+package com.green.board8.board;
 
+import com.green.board8.board.model.BoardDetailVo;
+import com.green.board8.board.model.BoardDto;
+import com.green.board8.board.model.BoardInsDto;
+import com.green.board8.board.model.BoardVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +22,12 @@ public class BoardService {
         return mapper.insBoard(dto);
     }
 
-    public List<BoardVo> selBoardAll(){
-        return mapper.selBoardAll();
+    public List<BoardVo> selBoardAll(BoardDto dto){
+       // final int ROW_PER_PAGE = 30;
+
+        int startIdx = (dto.getPage() -1)*dto.getRowLen();
+        dto.setStartIdx(startIdx);
+        return mapper.selBoardAll(dto);
     }
 
     public BoardDetailVo selBoardById(BoardDto dto){
