@@ -32,8 +32,6 @@ public class CmtController {
         return service.selBoardCmt(dto);
     }
 
-
-
     @DeleteMapping("/cmt")
     public int deleteBoardCmt(BoardCmtDelDto dto){
         return service.delBoardCmt(dto);
